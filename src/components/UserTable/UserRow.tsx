@@ -1,7 +1,12 @@
 import { User } from "../../types.ts";
+import styles from "./UserRow.module.scss";
 export default function UserRow({ user }: { user: User }) {
+  const userClick = () => {
+    console.log(user);
+  };
+
   return (
-    <tr>
+    <tr className={styles.row} role="button" onClick={userClick}>
       <th scope="row">{user.id}</th>
       <td>{user.name}</td>
       <td>{user.email}</td>
