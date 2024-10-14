@@ -1,5 +1,5 @@
-import { User } from "../../types.ts";
-import styles from "./UserRow.module.scss";
+import { User } from "../../types";
+import styles from "./UserRow.module.scss"; //used for hovers
 export default function UserRow({ user }: { user: User }) {
   const userClick = () => {
     console.log(user);

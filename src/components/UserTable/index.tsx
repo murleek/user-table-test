@@ -1,9 +1,8 @@
-import { useGetUsersQuery } from "../../app/services/user.ts";
-import UserRow from "./UserRow.tsx";
-import LoadingRow from "./LoadingRow.tsx";
-import NotFoundRow from "./NotFoundRow.tsx";
-import ErrorRow from "./ErrorRow.tsx";
-import { v4 as uuid } from "uuid";
+import { useGetUsersQuery } from "../../app/services/user";
+import UserRow from "./UserRow";
+import LoadingRow from "./LoadingRow";
+import NotFoundRow from "./NotFoundRow";
+import ErrorRow from "./ErrorRow";
 
 export default function UserTable() {
   const { data, isLoading, error } = useGetUsersQuery();
@@ -25,7 +24,7 @@ export default function UserTable() {
             {isLoading ? (
               <LoadingRow />
             ) : data ? (
-              data.map((x) => <UserRow user={x} key={uuid()} />)
+              data.map((x) => <UserRow user={x} key={x.id} />)
             ) : (
               <NotFoundRow />
             )}

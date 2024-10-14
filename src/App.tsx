@@ -1,5 +1,5 @@
-import Header from "./components/Header.tsx";
-import UserTable from "./components/UserTable/UserTable.tsx";
+import Header from "./components/Header";
+import UserTable from "./components/UserTable";
 
 function App() {
   return (
