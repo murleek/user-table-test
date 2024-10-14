@@ -1,17 +1,13 @@
-import "./App.css";
-import { useGetUsersQuery } from "./app/services/user.ts";
+import Header from "./components/Header.tsx";
+import UserTable from "./components/UserTable/UserTable.tsx";
 
 function App() {
-  const { data, isLoading, error } = useGetUsersQuery();
-
   return (
     <>
-      <pre>
-        <code>
-          {isLoading ? "Loading..." : JSON.stringify(data, null, 4)}
-          {error && JSON.stringify(error, null, 4)}
-        </code>
-      </pre>
+      <Header />
+      <main>
+        <UserTable />
+      </main>
     </>
   );
 }
